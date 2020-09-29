@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revealing text</title>
+</head>
+<body>
+  <!-- https://codepen.io/yemon/pen/dzgmxJ?editors=0100 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+    body {
+      /** Customize **/
+      font-family: 'Roboto';
+      text-align:center;
+      background: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
+      color: #555;
+      font-weight: 300;
+      font-size: 32px;
+      padding-top: 40vh;
+      height: 100vh;
+
+      /* overflow: hidden;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      perspective: 1000;
+      -webkit-perspective: 1000;
+      transform: translate3d(0,0,0);
+      -webkit-transform: translate3d(0,0,0); */
+    }
+
+    .text {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      --space-revealing-text: 355px;
+    }
+
+    .text:first-of-type {
+      animation: showup 7s infinite;
+    }
+
+    .text:last-of-type {
+      width: 0px;
+      animation: reveal 7s infinite;
+    }
+
+    .text:last-of-type span {
+      /* margin-left: -355px; */ /* not sure if it's necessary */
+      animation: slidein 7s infinite;
+    }
+
+    @keyframes showup {
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes slidein {
+      0% {
+        margin-left: -800px;
+      }
+      20% {
+        margin-left: -800px;
+      }
+      35% {
+        margin-left: 0px;
+      }
+      100% {
+        margin-left: 0px;
+      }
+    }
+
+    @keyframes reveal {
+      0% {
+        opacity: 0;
+        width: 0px;
+      }
+      20% {
+        opacity: 1;
+        width: 0px;
+      }
+      30% {
+        width: var(--space-revealing-text);
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        width: var(--space-revealing-text);
+      }
+    }
+  </style>
+
+  <div class="text">Escape</div>
+  <div class="text">
+    <span>into amazing experiences</span>
+  </div>
+</body>
+</html>

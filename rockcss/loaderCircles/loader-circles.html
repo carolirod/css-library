@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loader circles</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <style>
+    *,
+    *:before,
+    *:after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ff7340;
+    }
+
+    .loader {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      transform-style: preserve-3d;
+      transform: perspective(500px) rotateX(60deg);
+    }
+
+    .loader span {
+      position: absolute;
+      display: block;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      transform: translateZ(-100px);
+      animation: move 3s ease-in-out infinite;
+    }
+
+    /* ...continues in style.css */
+
+    @keyframes move {
+      0% {
+        transform: translateZ(-100px);
+      }
+      50% {
+        transform: translateZ(100px);
+      }
+      100% {
+        transform: translateZ(-100px);
+      }
+    }
+  </style>
+
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</body>
+</html>

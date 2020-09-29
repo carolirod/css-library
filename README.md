@@ -1,2 +1,4 @@
 # css-library
-Production ready animations
+Production ready-to-adapt animations
+
+List of animations I want to learn and understand

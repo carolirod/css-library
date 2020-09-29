@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neony text</title>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="animation-flicker.css">
+</head>
+<body>
+  <style>
+    *,
+    *:before,
+    *:after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /** custom **/
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* Wall */
+      background-color: #141114;
+      --brick-size: 23px;
+      --bg-size: calc(var(--brick-size) * 2.52);
+      background-image: linear-gradient(335deg, black var(--brick-size), transparent var(--brick-size)),
+        linear-gradient(155deg, black var(--brick-size), transparent var(--brick-size)),
+        linear-gradient(335deg, black var(--brick-size), transparent var(--brick-size)),
+        linear-gradient(155deg, black var(--brick-size), transparent var(--brick-size));
+      background-size: var(--bg-size) var(--bg-size);
+      background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+    }
+
+    .sign {
+      --neon-across: #6b1839;
+      --neon-light: #ffe6ff;
+      --neon-medium: #ff65bd;
+      --neon-dark: #ff2483;
+      background-image: radial-gradient(
+        ellipse 50% 35% at 50% 50%,
+        var(--neon-across),
+        transparent
+      );
+      letter-spacing: 2px;
+      font-size: 6rem;
+      text-transform: uppercase;
+      color: var(--neon-light);
+      /* Important thick font family */
+      font-family: 'Monoton', cursive;
+      text-shadow: 0 0 0.6rem var(--neon-light),
+        0 0 1.5rem var(--neon-medium),
+        -0.2rem 0.1rem 1rem var(--neon-medium),
+        0.2rem 0.1rem 1rem var(--neon-medium),
+        0 -0.5rem 2rem var(--neon-dark),
+        0 0.5rem 3rem var(--neon-dark);
+      animation: shine 2s forwards, flicker 3s infinite;
+    }
+
+    .flicker {
+      animation: shine 2s forwards, blink 3s 2s infinite;
+    }
+
+    .fast-flicker {
+      animation: shine 2s forwards, blink 10s 1s infinite;
+    }
+
+    @keyframes blink {
+      0%,
+      22%,
+      36%,
+      75% {
+        color: var(--neon-light);
+        text-shadow: 0 0 0.6rem var(--neon-light),
+          0 0 1.5rem var(--neon-medium),
+          -0.2rem 0.1rem 1rem var(--neon-medium),
+          0.2rem 0.1rem 1rem var(--neon-medium),
+          0 -0.5rem 2rem var(--neon-dark),
+          0 0.5rem 3rem var(--neon-dark);
+      }
+      28%,
+      33% {
+        color: var(--neon-medium);
+        text-shadow: none;
+      }
+      82%,
+      97% {
+        color: var(--neon-dark);
+        text-shadow: none;
+      }
+    }
+
+    @keyframes shine {
+      0% {
+        color: var(--neon-across);
+        text-shadow: none;
+      }
+      100% {
+        color: var(--neon-light);
+        text-shadow: 0 0 0.6rem var(--neon-light),
+          0 0 1.5rem var(--neon-medium),
+          -0.2rem 0.1rem 1rem var(--neon-medium),
+          0.2rem 0.1rem 1rem var(--neon-medium),
+          0 -0.5rem 2rem var(--neon-dark),
+          0 0.5rem 3rem var(--neon-dark);
+      }
+    }
+  </style>
+  <div class="sign">
+    <span class="fast-flicker">b</span>
+    rea
+    <span class="flicker">t</span>
+    he
+  </div>
+</body>
+</html>

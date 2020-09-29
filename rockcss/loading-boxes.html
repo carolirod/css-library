@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading boxes</title>
+</head>
+<body>
+  <style>
+    *,
+    *:before,
+    *:after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #333;
+    }
+
+    .container {
+      width: 112px;
+      height: 112px;
+    }
+
+    .container .box1,
+    .container .box2,
+    .container .box3 {
+      display: block;
+      position: absolute;
+      border: 16px solid white;
+    }
+
+    .container .box1 {
+      width: 112px;
+      height: 48px;
+      margin-top: 64px;
+      margin-left: 0;
+      animation: animate1 4s forwards ease-in-out infinite;
+    }
+
+    .container .box2 {
+      width: 48px;
+      height: 48px;
+      margin-top: 0;
+      margin-left: 0;
+      animation: animate2 4s forwards ease-in-out infinite;
+    }
+
+    .container .box3 {
+      width: 48px;
+      height: 48px;
+      margin-top: 0;
+      margin-left: 64px;
+      animation: animate3 4s forwards ease-in-out infinite;
+    }
+
+    @keyframes animate1 {
+      0% {
+        width: 112px;
+        height: 48px;
+        margin-top: 64px;
+        margin-left: 0;
+      }
+
+      12.5%, 25%, 37.5%, 50%, 62.5% {
+        width: 48px;
+        height: 48px;
+        margin-top: 64px;
+        margin-left: 0;
+      }
+
+      75% {
+        width: 48px;
+        height: 112px;
+        margin-top: 0;
+        margin-left: 0;
+      }
+
+      87.5%, 100% {
+        width: 48px;
+        height: 48px;
+        margin-top: 0;
+        margin-left: 0;
+      }
+    }
+
+    @keyframes animate2 {
+      0%, 12.5%, 25%, 37.5% {
+        width: 48px;
+        height: 48px;
+        margin-top: 0;
+        margin-left: 0;
+      }
+
+      50% {
+        width: 112px;
+        height: 48px;
+        margin-top: 0;
+        margin-left: 0;
+      }
+
+      62.5%, 75%, 87.5%, 100% {
+        width: 48px;
+        height: 48px;
+        margin-top: 0;
+        margin-left: 64px;
+      }
+    }
+
+    @keyframes animate3 {
+      0%, 12.5% {
+        width: 48px;
+        height: 48px;
+        margin-top: 0;
+        margin-left: 64px;
+      }
+
+      25% {
+        width: 48px;
+        height: 112px;
+        margin-top: 0;
+        margin-left: 64px;
+      }
+
+      37.5%, 50%, 62.5%, 87.5% {
+        width: 48px;
+        height: 48px;
+        margin-top: 64px;
+        margin-left: 64px;
+      }
+
+      100% {
+        width: 112px;
+        height: 48px;
+        margin-top: 64px;
+        margin-left: 0;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </div>
+</body>
+</html>

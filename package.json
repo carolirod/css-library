@@ -1,0 +1,33 @@
+{
+  "name": "css-library",
+  "version": "1.0.0",
+  "description": "Cool stuff",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "npm-watch": "^0.7.0"
+  },
+  "scripts": {
+    "css-loader-circles": "node-sass rockcss/loaderCircles/style.scss -o rockcss/loaderCircles/",
+    "css-loader-ring": "node-sass rockcss/loaderRing/style.scss -o rockcss/loaderRing/",
+    "css-inters": "node-sass rockcss/interstellarText/style.scss -o rockcss/interstellarText/",
+    "css-rotating-boxes": "node-sass rockcss/rotatingBoxes/style.scss -o rockcss/rotatingBoxes/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carolirod/css-library.git"
+  },
+  "keywords": [
+    "css",
+    "library",
+    "effects",
+    "animations"
+  ],
+  "author": "Carolina Rodriguez Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carolirod/css-library/issues"
+  },
+  "homepage": "https://github.com/carolirod/css-library#readme"
+}

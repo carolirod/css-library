@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling image</title>
+</head>
+<body>
+  <style>
+    *,
+    *:before,
+    *:after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-gap: 30px;
+    }
+
+    .container .box {
+      height: 400px;
+      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+      background-position: top;
+      transition: ease-in-out 8s;
+    }
+
+    .container .box.img1 {
+      background: url(https://images.unsplash.com/photo-1534142499731-a32a99935397?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=934&w=300&q=80);
+      background-size: cover;
+    }
+
+    .container .box.img2 {
+      background: url(https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=958&w=300&q=80);
+      background-size: cover;
+    }
+
+    .container .box:hover {
+      background-position: bottom;
+    }
+  </style>
+  <div class="container">
+    <div class="box img1"></div>
+    <div class="box img2"></div>
+  </div>
+</body>
+</html>

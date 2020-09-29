@@ -1,0 +1,11 @@
+.loader {
+  @for $i from 0 through 14 {
+    span:nth-child(#{$i + 1}) {
+      top: #{10 * $i}px;
+      left: #{10 * $i}px;
+      right: #{10 * $i}px;
+      bottom: #{10 * $i}px;
+      animation-delay: #{0.1 * $i}s;
+    }
+  }
+}

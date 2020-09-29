@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav rotate</title>
+</head>
+
+<body>
+  <style>
+    *,
+    *:before,
+    *:after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      perspective: 800px;
+
+      /* customize */
+      background-color: #4e7188;
+      font-family: sans-serif;
+    }
+
+    .navigation {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 16rem; /**/
+      background-color: #bfa084;
+      transform: translate(-16rem);
+      transition: 150ms ease-out;
+    }
+
+    .navigation__btn {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -65px;
+      width: 65px;
+      height: 60px;
+      z-index: 2; /* same as the navbar */
+
+      /* customize */
+      border: 0;
+      color: white;
+      background-color: #bfa084;
+      font-size: 12px;
+      line-height: 60px;
+      text-align: center;
+      letter-spacing: 1px;
+      cursor: pointer;
+      font-weight: 300;
+      transition: .2s;
+    }
+
+    .navigation__btn:hover {
+      /* customize */
+      color: #000000;
+      background: white;
+    }
+
+    .navigation .navigation__list {
+      list-style: none;
+    }
+
+    .navigation .navigation__list .navigation__link {
+      display: inline-block;
+      padding: 0 16px;
+      width: 100%;
+      height: 60px;
+
+      /* customize */
+      color: white;
+      line-height: 60px;
+      text-decoration: none;
+      text-transform: uppercase;
+      background: #bfa084;
+      transition: .2s;
+    }
+
+    .navigation .navigation__list .navigation__link:hover {
+      /* customize */
+      color: #000000;
+      background: white;
+    }
+
+    main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(https://images.unsplash.com/photo-1597696020157-05fa17322c0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80);
+      background-size: cover;
+      transform-origin: left;
+      transition: 150ms ease-out;
+    }
+
+    .menu-active .navigation {
+      transform: translateX(0);
+    }
+
+    .navigation.menu-hover {
+      transform: translateX(-15rem);
+    }
+
+    .menu-active main {
+      transform: translateX(16rem) rotateY(15deg);
+    }
+
+    main.menu-hover {
+      transform: translateX(1rem) rotateY(1deg);
+    }
+  </style>
+  <nav class="navigation">
+    <button class="navigation__btn js-navbar">NAVBAR</button>
+    <ul class="navigation__list">
+      <li class="navigation__item"><a href="#" class="navigation__link">HOME</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">GALLERY</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">ABOUT US</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">BLOG</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">CONTACT</a></li>
+      <li class="navigation__item"><a href="#" class="navigation__link">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <main></main>
+
+  <script>
+    const navBarBtn = document.querySelector('.js-navbar');
+
+    const addHover = () => {
+      document.querySelector('main').classList.add('menu-hover');
+      document.querySelector('.navigation').classList.add('menu-hover');
+    };
+
+    const removeHover = () => {
+      document.querySelector('main').classList.remove('menu-hover');
+      document.querySelector('.navigation').classList.remove('menu-hover');
+    };
+
+    navBarBtn.addEventListener('mouseenter', function() {
+      const classesBody = document.querySelector('body').classList;
+
+      if (!classesBody.contains('menu-active')) {
+        addHover();
+      }
+    });
+
+    navBarBtn.addEventListener('mouseleave', function() {
+      removeHover();
+    });
+
+    navBarBtn.addEventListener('click', function() {
+      const classesBody = document.querySelector('body').classList;
+
+      if (classesBody.contains('menu-active')) {
+        classesBody.remove('menu-active');
+      } else {
+        removeHover();
+        classesBody.add('menu-active');
+      }
+    });
+  </script>
+</body>
+</html>

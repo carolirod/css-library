@@ -1,0 +1,7 @@
+.loader {
+  @for $i from 1 through 4 {
+    span:nth-child(#{$i}) {
+      filter: blur(#{$i * 5}px);
+    }
+  }
+}

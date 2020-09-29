@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing effect</title>
+  </head>
+  <body>
+    <style>
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      p {
+        font-family: sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        transform: translate(-20%, -20%);
+        color: transparent;
+      }
+
+      p:before {
+        content: 'Typing effect on a cool text';
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        overflow: hidden;
+        border-right: 1px solid #000;
+        animation: blink 1s infinite,
+          /** count letters, use it for steps **/
+          /* backwards instead of infinite in type animation to only type the text once */
+          type 10s steps(28) infinite 1s;
+        white-space: nowrap;
+
+        /** Customized **/
+        width: 100%;
+        text-transform: uppercase;
+        color: #4c4c4c;
+      }
+
+      @keyframes type {
+        0% {
+          width: 0;
+        }
+        50% {
+          width: 100%;
+        }
+        100% {
+          width: 0;
+        }
+      }
+
+      @keyframes blink {
+        0% { border-color: #000; }
+        25% { border-color: transparent; }
+        50% { border-color: #000; }
+        75% { border-color: transparent; }
+        100% { border-color: #000; }
+      }
+    </style>
+    <p>Typing effect on a cool text</p>
+  </body>
+</html>

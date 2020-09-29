@@ -1,0 +1,11 @@
+.loader span:nth-child(1) {
+  filter: blur(5px); }
+
+.loader span:nth-child(2) {
+  filter: blur(10px); }
+
+.loader span:nth-child(3) {
+  filter: blur(15px); }
+
+.loader span:nth-child(4) {
+  filter: blur(20px); }

@@ -1,0 +1,7 @@
+- Word swap animation https://codepen.io/EricPorter/pen/JjPmOOb
+- Sick random generated text https://codepen.io/lefoy/pen/oXadRa
+- Impossible effect https://codepen.io/jamesmellers/pen/XKmyoo
+- Snake text 3 colors https://codepen.io/ClaireLarsen/pen/XmVyVX/
+- alter typing https://codepen.io/brandonmcconnell/pen/bZqGdw
+- fire inside text https://codepen.io/Moslim/pen/zwJPgL
+- Smokey effect text https://codepen.io/bennettfeely/pen/lgybC/

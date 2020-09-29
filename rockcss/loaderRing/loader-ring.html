@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loader ring</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <style>
+    *,
+    *:before,
+    *:after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      --background: #fadcdc;
+      --color1: #fdb26c;
+      --color2: #fbfbfb;
+      --color3: #ddff7f;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--background);
+    }
+
+    .loader {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(var(--color1), var(--color2), var(--color3));
+    }
+
+    .loader span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(var(--color1), var(--color2), var(--color3));
+      animation: animate 1s cubic-bezier(0.82, 0.68, 0.15, 0.29) infinite;
+    }
+
+    /* ...continue on style.css */
+
+    .loader::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border-radius: 50%;
+      background: var(--background);
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</body>
+</html>
